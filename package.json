@@ -1,0 +1,26 @@
+{
+  "name": "import-pob-code",
+  "version": "0.0.1",
+  "description": "Import plain old browser code for testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moikaturns/import-pob-code.git"
+  },
+  "keywords": [
+    "plain-old-javascript",
+    "non-module",
+    "module-less",
+    "browser-script",
+    "browser-script"
+  ],
+  "author": "moikaturns",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moikaturns/import-pob-code/issues"
+  },
+  "homepage": "https://github.com/moikaturns/import-pob-code#readme"
+}
