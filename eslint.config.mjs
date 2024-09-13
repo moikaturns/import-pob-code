@@ -9,7 +9,7 @@ export default [
   { 
     ...pluginJs.configs.recommended,
     name: "nodejs code", 
-    files: ["**/*.js"], 
+    files: ["src/**/*.js"], 
     languageOptions: { sourceType: "commonjs", globals: {...globals.node} }
   }
 ];

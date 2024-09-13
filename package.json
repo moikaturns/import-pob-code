@@ -4,7 +4,7 @@
   "description": "Import plain old browser code for testing",
   "main": "index.js",
   "scripts": {
-    "pretty": "prettier --list-different *.js",
+    "pretty": "prettier --list-different src/**/*.js",
     "prettyFix": "prettier --write *.js",
     "lint": "eslint",
     "lintFix": "eslint --fix",
