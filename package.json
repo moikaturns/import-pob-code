@@ -4,8 +4,8 @@
   "description": "Import plain old browser code for testing",
   "main": "index.js",
   "scripts": {
-    "pretty": "npx prettier *.js",
-    "prettyFix": "npx prettier --write *.js",
+    "pretty": "prettier *.js",
+    "prettyFix": "prettier --write *.js",
     "test": "test"
   },
   "repository": {
