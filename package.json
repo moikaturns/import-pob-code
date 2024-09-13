@@ -4,6 +4,8 @@
   "description": "Import plain old browser code for testing",
   "main": "index.js",
   "scripts": {
+    "pretty": "npx prettier *.js",
+    "prettyFix": "npx prettier --write *.js",
     "test": "test"
   },
   "repository": {
@@ -22,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/moikaturns/import-pob-code/issues"
   },
-  "homepage": "https://github.com/moikaturns/import-pob-code#readme"
+  "homepage": "https://github.com/moikaturns/import-pob-code#readme",
+  "devDependencies": {
+    "prettier": "^3.3.3"
+  }
 }
