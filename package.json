@@ -4,8 +4,12 @@
   "description": "Import plain old browser code for testing",
   "main": "index.js",
   "scripts": {
-    "pretty": "prettier *.js",
+    "pretty": "prettier --list-different *.js",
     "prettyFix": "prettier --write *.js",
+    "lint": "eslint",
+    "lintFix": "eslint --fix",
+    "static": "npm run pretty && npm run lint",
+    "staticFix": "npm run prettyFix && npm run lintFix",
     "test": "test"
   },
   "repository": {
@@ -26,6 +30,9 @@
   },
   "homepage": "https://github.com/moikaturns/import-pob-code#readme",
   "devDependencies": {
+    "@eslint/js": "^9.10.0",
+    "eslint": "^9.10.0",
+    "globals": "^15.9.0",
     "prettier": "^3.3.3"
   }
 }
