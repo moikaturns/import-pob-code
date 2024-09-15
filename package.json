@@ -8,13 +8,13 @@
   ],
   "scripts": {
     "clean": "rimraf lib",
-    "pretty": "prettier --list-different src/**/*.js",
-    "prettyFix": "prettier --write src/**/*.js",
+    "pretty": "prettier --list-different {test,src}/**/*.js",
+    "prettyFix": "prettier --write {test,src}/**/*.js",
     "lint": "eslint",
     "lintFix": "eslint --fix",
     "static": "npm run pretty && npm run lint",
     "staticFix": "npm run prettyFix && npm run lintFix",
-    "test": "test",
+    "test": "mocha test/**/*.mjs",
     "build": "NODE_ENV=production babel src --out-dir lib"
   },
   "repository": {
@@ -37,8 +37,10 @@
   "devDependencies": {
     "@eslint/js": "^9.10.0",
     "babel-cli": "^6.26.0",
+    "chai": "^5.1.1",
     "eslint": "^9.10.0",
     "globals": "^15.9.0",
+    "mocha": "^10.7.3",
     "prettier": "^3.3.3",
     "rimraf": "^6.0.1"
   },
