@@ -1,14 +1,5 @@
 {
-    "env": {
-        "development": {
-            "presets": [
-                "env"
-            ]
-        },
-        "production": {
-            "presets": [
-                "env"
-            ]
-        }
-    }
+    "presets": [
+        "env"
+    ]
 }
