@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "Import plain old browser code for testing",
   "main": "./lib/index.js",
-  "files": ["/lib"],
+  "files": [
+    "/lib"
+  ],
   "scripts": {
     "clean": "rimraf lib",
     "pretty": "prettier --list-different src/**/*.js",
@@ -12,7 +14,8 @@
     "lintFix": "eslint --fix",
     "static": "npm run pretty && npm run lint",
     "staticFix": "npm run prettyFix && npm run lintFix",
-    "test": "test"
+    "test": "test",
+    "build": "NODE_ENV=production babel src --out-dir lib"
   },
   "repository": {
     "type": "git",
@@ -33,9 +36,15 @@
   "homepage": "https://github.com/moikaturns/import-pob-code#readme",
   "devDependencies": {
     "@eslint/js": "^9.10.0",
+    "babel-cli": "^6.26.0",
     "eslint": "^9.10.0",
     "globals": "^15.9.0",
     "prettier": "^3.3.3",
     "rimraf": "^6.0.1"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
   }
 }
