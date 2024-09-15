@@ -77,7 +77,9 @@ function _getCallerFile(callerLevel) {
   const stack = err.stack;
   Error.prepareStackTrace = prepareStackTraceOrg;
   let filename = stack[callerLevel + 1].getFileName();
-  return filename.substring(0,7) === "file://" ? filename.substring(7) : filename;
+  return filename.substring(0, 7) === "file://"
+    ? filename.substring(7)
+    : filename;
 }
 
 module.exports = {
