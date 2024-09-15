@@ -9,7 +9,7 @@
   "scripts": {
     "clean": "rimraf lib",
     "pretty": "prettier --list-different src/**/*.js",
-    "prettyFix": "prettier --write *.js",
+    "prettyFix": "prettier --write src/**/*.js",
     "lint": "eslint",
     "lintFix": "eslint --fix",
     "static": "npm run pretty && npm run lint",
