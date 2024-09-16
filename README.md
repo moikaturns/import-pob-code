@@ -22,12 +22,12 @@ describe('A', () => {
 }
 ```
 
-The test fails because ```A``` is undefined. Every top-level name ```script.js``` defines wants to dump itself into the global namespace of the browser when it executes. This isn't a fault, it's just that in a node context this is prevented from happening. The act of requiring a file in node results in that script being wrapped inside a function. The names in the script therefore no longer end up in the global scope, thereby hiding them from the test file.
+The test fails because ```A``` is undefined. Every top-level name ```script.js``` defines wants to dump itself into the global namespace of the browser when it executes. This isn't a fault, it's just that in a node context this is prevented from happening. The act of requiring a file in node results in its script being wrapped inside a function. The name ```A``` in this script therefore no longer end up in the global scope, thereby hiding it from the test file.
 
 # This Solution
-One workaround could involve modifying the browser script so it recognises when it's running inside node and exports what's needed. If there are a couple of files this may be tolerable but if there are many that's a lot of work and the edits aren't adding much value to the script files themselves.
+Converting the files to JavaScript module syntax would work as browsers and node understand them, but might require quite a bit of refactoring. A cheaper workaround could invole modifying the browser script so it recognises when it's running inside node and export what's needed. It might not be particularly pretty and the edits won't be adding much value to the script files themselves.
 
-This library provides an alternative way of requiring a browser script and exporting what's needed which doesn't involve modifying the original, making its contents accessible for unit testing using node for example.
+This library provides an alternative way of requiring the non-modular browser script from within node, one which supports a way export what's needed for unit testing and doesn't involve modifying the original script.
 
 To fix the test failure above with this library is a one-line change to the test file, like so:
 
