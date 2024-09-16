@@ -4,7 +4,7 @@ import pluginJs from "@eslint/js";
 
 export default [
   {
-    ignores: ["eslint.config.js"]
+    ignores: ["eslint.config.js", "test/browser.scripts/**/*.js"]
   },
   { 
     ...pluginJs.configs.recommended,
