@@ -15,7 +15,7 @@ test/script.test.js
 ```
 require('./../src/script.js');
 describe('A', () => {
-  if('should do', () => {
+  if('should provide the answer to life, the universe and everything', () => {
     const a = new A();
     expect(a.do()).toEqual(42);
   }
