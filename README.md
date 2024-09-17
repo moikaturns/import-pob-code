@@ -56,6 +56,6 @@ See test files.
 # Usage
 Installation:
 ```
-npm install @moikaturns/import-pob-code
+npm install @moikaturns/import-pob-code --save-dev
 ```
 For usage see 'This Solution' above.
