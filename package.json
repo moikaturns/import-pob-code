@@ -14,7 +14,7 @@
     "lintFix": "eslint --fix",
     "static": "npm run pretty && npm run lint",
     "staticFix": "npm run prettyFix && npm run lintFix",
-    "test": "mocha test/**/*.{js,mjs}",
+    "test": "mocha test/*.{js,mjs}",
     "testDebug": "node node_modules/mocha/bin/mocha.js --inspect-brk",
     "build": "NODE_ENV=production babel src --out-dir lib"
   },
@@ -48,6 +48,7 @@
   "dependencies": {
     "babel-core": "^6.26.3",
     "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.7.0"
+    "babel-preset-env": "^1.7.0",
+    "jsdom": "^25.0.0"
   }
 }
