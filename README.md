@@ -34,7 +34,7 @@ To fix the test failure above with this library is a one-line change to the test
 
 ./test/script.test.js
 ```
-const A = require('import-pob-code').load({ file: './../src/script.js', exports: ['A']}).A;
+const A = require('@moikaturns/import-pob-code').load({ file: './../src/script.js', exports: ['A']}).A;
 describe('A', () => {
   if('should provide the answer to life, the universe and everything', () => {
     const a = new A();
@@ -51,3 +51,11 @@ The library's load method will synchronously read the target script specified by
 The load method can also be provided any number of variables in a ```context``` object that are made visible to the script when executed. This is useful to mock dependencies such as the DOM or 3rd party libraries the script expects to exist at runtime. See examples below.
 
 # Further Examples
+See test files.
+
+# Usage
+Installation:
+```
+npm install @moikaturns/import-pob-code
+```
+For usage see 'This Solution' above.
