@@ -58,4 +58,4 @@ Installation:
 ```
 npm install @moikaturns/import-pob-code --save-dev
 ```
-For usage see 'This Solution' above.
+For a simple example see 'This Solution' above.
