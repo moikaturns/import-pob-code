@@ -1,6 +1,6 @@
 {
-  "name": "import-pob-code",
-  "version": "0.0.1",
+  "name": "@moikaturns/import-pob-code",
+  "version": "1.0.0",
   "description": "Import plain old browser code for testing",
   "main": "./lib/index.js",
   "files": [
@@ -16,7 +16,8 @@
     "staticFix": "npm run prettyFix && npm run lintFix",
     "test": "mocha test/*.{js,mjs}",
     "testDebug": "node node_modules/mocha/bin/mocha.js --inspect-brk",
-    "build": "NODE_ENV=production babel src --out-dir lib"
+    "build": "NODE_ENV=production babel src --out-dir lib",
+    "prepublish": "npm run clean && npm run static && npm run test && npm run build"
   },
   "repository": {
     "type": "git",
