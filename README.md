@@ -22,12 +22,12 @@ describe('A', () => {
 }
 ```
 
-The test fails because ```A``` is undefined. Every top-level name ```script.js``` defines wants to dump itself into the global namespace of the browser when it executes. This isn't a fault, it's just that in a node context this is prevented from happening. The act of requiring a file in node results in its script being wrapped inside a function. The name ```A``` in this script therefore no longer end up in the global scope, thereby hiding it from the test file.
+The test fails because ```A``` is undefined. Every top-level name ```script.js``` defines wants to dump itself into the global namespace of the browser when it executes. This isn't a fault, it's just that in a node context this is prevented from happening. The act of requiring a file in node results in its script being wrapped inside a function. The name ```A``` in this script therefore no longer ends up in the global scope, thereby hiding it from the test file.
 
 # This Solution
-Converting the files to JavaScript module syntax would work as browsers and node understand them, but might require quite a bit of refactoring. A cheaper workaround could invole modifying the browser script so it recognises when it's running inside node and export what's needed. It might not be particularly pretty and the edits won't be adding much value to the script files themselves.
+Converting the files to JavaScript module syntax would work as browsers and node understand them, but might require quite a bit of refactoring. A cheap workaround could invole modifying the browser script so it recognises when it's running inside node and exports what's needed, though it might not be pretty and the edits won't be adding much value to the script files themselves.
 
-This library provides an alternative way of requiring the non-modular browser script from within node, one which supports a way export what's needed for unit testing and doesn't involve modifying the original script.
+This library provides an alternative way of requiring the non-modular browser script from within node, one which supports a way to export what's needed from a script for unit testing that doesn't involve modifying the original script.
 
 To fix the test failure above with this library is a one-line change to the test file, like so:
 
@@ -35,7 +35,7 @@ To fix the test failure above with this library is a one-line change to the test
 ```
 const A = require('import-pob-code').load({ file: './../src/script.js', exports: ['A']}).A;
 describe('A', () => {
-  if('should do A', () => {
+  if('should provide the answer to life, the universe and everything', () => {
     const a = new A();
     expect(a.do()).toEqual(42);
   }
@@ -44,7 +44,7 @@ describe('A', () => {
 
 The above example should run without error.
 
-How it works: the library's load method will synchronously read the target script specified by ```file``` then wrap it in a new function that returns an object containing references to the variables named within ```exports``` when the new function is invoked.
+How it works: the library's load method will synchronously read the target script specified by ```file``` then wrap it in a new function that returns an object containing references to the variables named by ```exports``` when the new function is invoked.
 
 The load method can also be provided any number of variables in a ```context``` object that are made visible to the script when executed. This is useful to mock dependencies such as the DOM or 3rd party libraries the script expects to exist at runtime. See examples below.
 
