@@ -45,7 +45,7 @@ describe('A', () => {
 
 The above example should run without error.
 
-# Wor It Works
+# How It Works
 The library's load method will synchronously read the target script specified by ```file``` then wrap it in a new function that returns an object containing references to the variables named by ```exports``` when the new function is invoked.
 
 The load method can also be provided any number of variables in a ```context``` object that are made visible to the script when executed. This is useful to mock dependencies such as the DOM or 3rd party libraries the script expects to exist at runtime. See examples below.
