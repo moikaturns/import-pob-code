@@ -51,7 +51,7 @@ The library's load method will synchronously read the target script specified by
 The load method can also be provided any number of variables in a ```context``` object that are made visible to the script when executed. This is useful to mock dependencies such as the DOM or 3rd party libraries the script expects to exist at runtime. See examples below.
 
 # Further Examples
-See test files.
+See unit test files.
 
 # Usage
 Installation:
