@@ -28,7 +28,7 @@ The test fails because ```A``` is undefined. Every top-level name ```script.js``
 Converting the files to JavaScript module syntax would work as browsers and node understand them, but might require quite a bit of refactoring. A cheap workaround could invole modifying the browser script so it recognises when it's running inside node and exports what's needed, this might not be pretty and the edits won't be adding much value to the script files themselves.
 
 # This Solution
-This library provides a way of requiring the non-modular browser script from within node, one which supports a way to export what's needed from a script for unit testing that doesn't involve modifying the original script.
+This library provides a non-intrusive way of requiring the non-modular browser script from within node, one which supports a way to export what's needed from a script for unit testing that doesn't involve modifying the original script.
 
 To fix the test failure above with this library is a one-line change to the test file, like so:
 
